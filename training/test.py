@@ -1,4 +1,4 @@
-from t002 import execsql
+# -*- coding: UTF-8 -*-
+import random
 
-sql = "select top 1 * from customer where customer_id='{}'".format('za83')
-execsql(sql)
+print('-'.join("asdasd"))

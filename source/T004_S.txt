@@ -1,0 +1,1 @@
+<div class="col search row-search-mobile"><input class="placeholder" placeholder="" name="s" autocomplete="off"></div> <div class="col logo">1231 </div>
