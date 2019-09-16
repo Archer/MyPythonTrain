@@ -1,4 +1,4 @@
-# MyPythonTrain  
+#MyPythonTrain  
 #练手小项目  
 #1.熟悉pycharm  
 #2.熟悉git  
