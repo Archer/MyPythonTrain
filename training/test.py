@@ -1,4 +1,14 @@
-# -*- coding: UTF-8 -*-
-import random
+import requests
 
-print('-'.join("asdasd"))
+cookie = r"wpush_server_url=wss://wpush.meituan.com; shopCategory=food; device_uuid=!ec229832-0d39-49e8-8063-682011e1e9a2; uuid_update=true; _lxsdk_cuid=16d2d7d926ec8-062020c93377d8-34594872-1fa400-16d2d7d926fc8; _lxsdk=16d2d7d926ec8-062020c93377d8-34594872-1fa400-16d2d7d926fc8; uuid=26189c907879d229d700.1568426269.1.0.0; bsid=A-nFV4Gtsjvk05l2jcoHQCYIYoQsoz8DxVOTAWuQLd5uu2MX4Y9tYXNhiLvrIXrZ7Alu2SHGf4h7spZjtvXxCQ; acctId=41421701; token=0jW44cS1IZ8Cwdij6_TVhG2cGa-o7lW1UaABvUyMqEzE*; brandId=-1; wmPoiId=5168729; isOfflineSelfOpen=0; city_id=420900; isChain=0; existBrandPoi=true; ignore_set_router_proxy=false; region_id=1000420900; region_version=1528254392; newCategory=false; logistics_support=1; cityId=440300; provinceId=440000; city_location_id=420900; location_id=420902; pushToken=0jW44cS1IZ8Cwdij6_TVhG2cGa-o7lW1UaABvUyMqEzE*; set_info=%7B%22wmPoiId%22%3A5168729%2C%22region_id%22%3A%221000420900%22%2C%22region_version%22%3A1528254392%7D; setPrivacyTime=2_20190914; LX_SC_CONSTANT=c_nehoktcu; JSESSIONID=kf4mwle185ywanu4nsvos2wl; _lxsdk_s=16d2db0ff5c-399-723-d7b%7C%7C76"
+headers = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.75 Safari/537.36',
+    'Cookie': cookie,
+    'Host': r'waimaie.meituan.com',
+    'Referer': r'https://waimaie.meituan.com/v2/order/history?region_id=1000420900&region_version=1528254392',
+}
+url = r"https://waimaie.meituan.com/v2/order/history/r/query?getNewVo=1&wmOrderPayType=2&wmOrderStatus=-2&sortField=1&startDate=2019-09-13&endDate=2019-09-13&lastLabel=&nextLabel=&requestWmPoiId=5168729&signToken=GZQXnG%60sWemMgDv%60ROPrMVa41%3AuVZ%7BWUzgCqM%5B)-TmoJp1w%60VxQP1RuC%3Bxdc%40-R7Z%7BGqLOms1Ra%40FX65Fr%603aoNlOH)2SSr2gwuCW7aDjw%60fSwx5px2PRGz%7Bxutx4IDdORjLmw-OADFH7UgvMwQS)u%3F%3F&region_id=1000420900&region_version=1528254392&_token=eJyVkWtvokAUhv8LH%252FpFUhhguJiYhlsVL0hVENs0GxSUEbnIXTf73xdssd1ssskSknnmnTfnzHnnJ5ZqLtYHZPNxOJZnDUOWZ2iKFThIQRzbfdM4mgYciWPb1FKw%252FptAQ5xnhPdWWDT7NyBQJA5InnzHO2Yappjmb11aY8L8PE%252ByPkFUDgod5D2GHsoLJ3rcxSFRUkScul5K%252BCjL4%252FTylHoHFEc%252FkDtor8hQpECSD59i6aVZsw4ApHgKMrRAYfg%252Fqz%252FlKPQGt1kogaV5GoCH%252F2zQTBGu2ikAR%252BMCbBregLkB0wH8Bh8etgMeF9gWeLIDuoPGzN2A64D%252FS6E%252BoS3IdS24rjvX3ecDQJM%252FeaP2JcCd2pwAK7Svcyd4J%252Fbu%252B6Kveh8a9Qd1MbT1moCCNqBmdb4FhWu6Ya7a0%252FzzNEOHCOtj3rh2j3xeHAJRFA3iWayCkZp48kmKl8PKj0VCM5UpVU2tQobbwHDhep%252FWu7I0QbhKdfmlB0SEaqCY9Wm7TMSgTtQjc4ziah0o%252FvRcXQhz7U7EWprVoR%252BgfI6O2Yo2TweGSpnX8%252FK8yP3wyi82xum0f4a8nCxjBcbRsLB8SZ3vzkjSoWMv6SGrE5vdfpZMQMzv1Z5kTQtNG8%252BuHioTLrkshoWNriNio45HShQdPRaxmT2XWG4n91Jnk1r%252Bcc7NJtKVcS3jEps9eWVNSiNDQ8l2KidS4HxK22K0H9luGY2TtJrr5quvvc5sawv0tTEjNT8pCcNbEGhYqBqdTreC7BuBNdaGW9V09%252BbIr8ehXg0G2K%252FfwRwQDQ%253D%253D"
+session = requests.Session()
+response = session.get(url, headers=headers)
+print(response.status_code)
+print(response.text)

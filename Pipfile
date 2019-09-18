@@ -8,6 +8,9 @@ verify_ssl = true
 [packages]
 pillow = "*"
 pymssql = "*"
+requests = "*"
+selenium = "*"
+configparser = "*"
 
 [requires]
 python_version = "3.7"
